@@ -21,13 +21,13 @@ pipeline {
 			if (fileExists('Dockerfile')) {
 				sh "docker build -t ${env.DOCKER_IMAGE} ."
 				}  else {
-					error "Dockerfile not found in the workspace. Please create one of your Python application."
+		error "Dockerfile not found in the workspace. Please create one of your Python application."
 					}
 				}
 			}
 		}
-	stage('Docker Run (Optional)') {
-		steps {			sh "docker run --rm ${env.DOCKER_IMAGE"}}			}
+#	stage('Docker Run (Optional)') {
+#		steps {			sh "docker run --rm ${env.DOCKER_IMAGE"}}			}
 		}
 	}
 
