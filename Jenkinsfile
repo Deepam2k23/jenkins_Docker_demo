@@ -2,7 +2,7 @@ pipeline {
 	agent any
 
 
-	enviroment{
+	environment{
 	Docker_Image = 'hello-world-python:latest'
 	}
 	
@@ -27,9 +27,10 @@ pipeline {
 			}
 		}
 	stage('Docker Run (Optional)') {
-		steps {			sh "docker run --rm ${env.DOCKER_IMAGE"}}			}
+		steps {			sh "docker run --rm ${env.DOCKER_IMAGE"}
+	}			}
 		}
-	}
+	
 
 	post {
 		success {echo 'Success'}
