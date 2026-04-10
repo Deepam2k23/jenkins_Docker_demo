@@ -26,6 +26,7 @@ pipeline {
 					}
 				}
 			}
+		}
 	stage('Docker Run (Optional)') {
 		steps {
 			sh docker run --rm ${env.DOCKER_IMAGE}""}
